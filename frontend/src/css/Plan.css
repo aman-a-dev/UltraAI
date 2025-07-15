@@ -1,0 +1,415 @@
+.plan-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-direction: column;
+    padding-bottom: 50px;
+
+    .plans {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .card {
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 1rem;
+            width: 20rem;
+            height: auto;
+            background-color: var(--primary);
+            background-image: radial-gradient(
+                    circle at 0% 0%,
+                    var(--bg) 15%,
+                    var(--shadow) 75%
+                ),
+                radial-gradient(
+                    circle at 100% 100%,
+                    var(--bg) 15%,
+                    var(--shadow) 150%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--bg) 0%,
+                    var(--primary) 50%,
+                    var(--bg) 100%
+                );
+            border-radius: 0.5rem;
+            transition: all 1s;
+
+            &:hover {
+                transform: rotate(3deg);
+            }
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 2rem;
+            height: 2rem;
+            background-color: var(--primary);
+            background-image: linear-gradient(
+                0deg,
+                var(--accent) 0%,
+                var(--accent) 75%
+            );
+            border-radius: 9999px;
+            box-shadow:
+                0 1px 5px 3px var(--accent),
+                0 0 30px 5px var(--accent);
+        }
+
+        .card .title {
+            font-size: 1rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .card .pricing {
+            font-size: 1.5rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .card .pricing .pricing-time,
+        .card .sub-title {
+            font-size: 0.75rem;
+            color: var(--shadow);
+            font-weight: 500;
+        }
+
+        .card .list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            font-size: 0.75rem;
+            color: var(--text);
+            font-weight: 500;
+            list-style: none;
+        }
+
+        .card .list .list-item .check {
+            margin-right: 0.25rem;
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 900;
+        }
+
+        .card .button {
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            margin-top: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            width: 100%;
+            height: fit-content;
+            background-color: var(--primary);
+            font-size: 0.75rem;
+            color: var(--text);
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0px 0px 2px 1px var(--primary);
+            transition: all 0.3s cubic-bezier(1, 0, 0, 1);
+        }
+
+        .card .button .text-button {
+            position: relative;
+            z-index: 10;
+        }
+
+        .card .button::before,
+        .card .button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card .button::before {
+            left: 0;
+            background-image: radial-gradient(
+                circle at 0% 45%,
+                var(--shadow) 19%,
+                var(--accent) 46%,
+                var(--bg) 100%
+            );
+        }
+
+        .card .button::after {
+            right: 0;
+            background-image: radial-gradient(
+                circle at 100% 45%,
+                var(--shadow) 19%,
+                var(--accent) 46%,
+                var(--bg) 100%
+            );
+        }
+
+        .card .button:hover {
+            box-shadow: 0px 0px 20px 0 var(--primary);
+        }
+
+        .card .button:hover::before,
+        .card .button:hover::after {
+            width: 0;
+            opacity: 0;
+        }
+    }
+
+    .visa-card {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        width: 300px;
+        height: 180px;
+        background-image: radial-gradient(
+            circle 897px at 9% 80.3%,
+            var(--shadow) 0%,
+            var(--primary) 100.2%
+        );
+        border-radius: 10px;
+        padding: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+        gap: 15px;
+
+        .logoContainer {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: fit-content;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 18px;
+        }
+
+        .svgLogo {
+            height: 40px;
+            width: auto;
+        }
+
+        .inputstyle::placeholder {
+            color: var(--text);
+        }
+
+        .inputstyle {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: var(--text);
+            caret-color: var(--primary);
+            font-size: 13px;
+            height: 25px;
+            letter-spacing: 1.5px;
+        }
+
+        .number-container {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #cardNumber {
+            width: 100%;
+            height: 25px;
+        }
+
+        .name-date-cvv-container {
+            width: 100%;
+            height: 25px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .name-wrapper {
+            width: 60%;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .expiry-wrapper,
+        .cvv-wrapper {
+            width: 30%;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cvv-wrapper {
+            width: 10%;
+        }
+
+        #expiry,
+        #cvv {
+            width: 100%;
+        }
+
+        .input-label {
+            font-size: 8px;
+            letter-spacing: 1.5px;
+            color: var(--text);
+            width: 100%;
+        }
+    }
+
+    .pay-btn {
+        position: relative;
+        padding: 12px 24px;
+        font-size: 16px;
+        background: var(--bg);
+        color: var(--text);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .icon-container {
+            position: relative;
+            width: 24px;
+            height: 24px;
+        }
+
+        .icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            color: var(--accent);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .default-icon {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &:hover .icon {
+            animation: none;
+        }
+
+        &:hover .wallet-icon {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &:hover .card-icon {
+            animation: iconRotate 2.5s infinite;
+            animation-delay: 0s;
+        }
+
+        &:hover .payment-icon {
+            animation: iconRotate 2.5s infinite;
+            animation-delay: 0.5s;
+        }
+
+        &:hover .dollar-icon {
+            animation: iconRotate 2.5s infinite;
+            animation-delay: 1s;
+        }
+
+        &:hover .check-icon {
+            animation: iconRotate 2.5s infinite;
+            animation-delay: 1.5s;
+        }
+
+        &:active .icon {
+            animation: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        &:active .check-icon {
+            animation: checkmarkAppear 0.6s ease forwards;
+            visibility: visible;
+        }
+
+        .btn-text {
+            font-weight: 600;
+            font-family:
+                system-ui,
+                -apple-system,
+                sans-serif;
+        }
+    }
+}
+
+@keyframes iconRotate {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px) scale(0.5);
+    }
+    5% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+    15% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+    20% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px) scale(0.5);
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px) scale(0.5);
+    }
+}
+
+@keyframes checkmarkAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-45deg);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .plan-box {
+        .plans {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+}

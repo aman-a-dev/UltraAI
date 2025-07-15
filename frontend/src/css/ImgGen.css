@@ -1,0 +1,226 @@
+.img-gen-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    color: var(--text);
+    .tool {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--polymorphism);
+        backdrop-filter: blur(10px);
+        border-radius: 50px;
+        aspect-ratio: 1/1;
+    }
+    .img-gen-container h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--text);
+    }
+
+    .subtitle {
+        text-align: center;
+        color: var(--muted-text);
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+    }
+
+    .img-gen-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .img-box {
+        position: relative;
+        width: 100%;
+        max-width: 512px;
+        border-radius: 12px;
+        overflow: hidden;
+
+        background: var(--text);
+        aspect-ratio: 1/1;
+    }
+
+    .img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .image-actions {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        background: linear-gradient(to top, var(--shadow), transparent);
+        gap: 1rem;
+    }
+
+    .image-actions button {
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: all 0.2s ease;
+        color: var(--text);
+        background: var(--shadow);
+        backdrop-filter: blur(10px);
+    }
+
+    .image-actions button:hover {
+        transform: scale(1.1);
+    }
+
+    .like-btn.active {
+        background: var(--success);
+    }
+
+    .dislike-btn.active {
+        background: var(--error);
+    }
+
+    .download-btn {
+        background: var(--primary) !important;
+    }
+
+    .prompt-form {
+        flex: 1;
+        max-width: 512px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .prompt-form textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid var(--primary);
+        background: var(--polymorphism);
+        color: var(--text);
+        border-radius: 8px;
+        font-size: 1rem;
+        resize: none;
+        transition: border 0.3s ease;
+        min-height: 150px;
+        &:placeholder {
+            color: var(--muted-text);
+        }
+    }
+
+    .prompt-form textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+    }
+
+    .generate-btn {
+        padding: 0.8rem 1.5rem;
+        background: var(--primary);
+        color: var(--text);
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .generate-btn:hover {
+        background: var(--accent);
+        transform: translateY(-2px);
+    }
+
+    .generate-btn:disabled {
+        background: var(--muted-text);
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .image-loading {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--muted-text);
+    }
+
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid var(--text);
+        border-top: 5px solid var(--primary);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 1rem;
+    }
+    .error-message {
+        background-color: var(--bg);
+        color: var(--error);
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        margin: 1rem auto;
+        max-width: 512px;
+        text-align: center;
+        border: 1px solid var(--error);
+    }
+
+    .image-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bg);
+        color: var(--text);
+        font-style: italic;
+    }
+
+    .refresh-btn {
+        background: var(--primary) !important;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .character-count {
+        color: var(--text);
+        font-size: 0.9rem;
+    }
+
+    .image-actions button {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@media (min-width: 768px) {
+    .img-gen-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}

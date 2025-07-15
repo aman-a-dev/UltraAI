@@ -1,0 +1,7 @@
+.colored {
+    color: var(--primary);
+}
+a {
+    color: var(--text);
+    text-decoration: none;
+}

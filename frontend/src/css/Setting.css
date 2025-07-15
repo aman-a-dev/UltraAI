@@ -1,0 +1,22 @@
+.setting-box {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 50px;
+    align-items: center;
+    a {
+        color: var(--text);
+        text-decoration: none;
+    }
+    div {
+        display: flex;
+        justify-content: space-between;
+        transition: all 1s;
+        align-items: center;
+        width: 85vw;
+        height: 50px;
+        background: var(--shadow);
+        border-radius: 50px;
+        padding: 0 20px 0 20px;
+    }
+}
