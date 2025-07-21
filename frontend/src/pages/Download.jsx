@@ -56,7 +56,7 @@ export default function Download() {
                     alt="app-icon"
                     width="100px"
                 />
-                <a
+               {/* <a
                     onClick={() =>
                         alert(
                             "Android app is no available we will send you email when it ready. "
@@ -66,12 +66,12 @@ export default function Download() {
                     <button style={btn}>
                         <SiAndroid /> <span>Android</span>
                     </button>
-                </a>
-                {/* <a href="/app/ultraAI.apk">
+                </a>*/}
+                 <a href="/app/android_ultraai.apk" download>
                     <button style={btn}>
                         <SiAndroid /> <span>Android</span>
                     </button>
-                </a>*/}
+                </a>
                 <a
                     onClick={() =>
                         alert(
